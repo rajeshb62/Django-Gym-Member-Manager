@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import environ
-
+#import django
+#django.setup()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'reports',
     'payments',
     'gunicorn',
+    #'Gymnasium'
 ]
 
 MIDDLEWARE = [
@@ -86,7 +88,7 @@ WSGI_APPLICATION = 'Gymnasium.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-        'default': env.db('DATABASE_URL', default='postgres:///gymnasium_db')
+        'default': env.db('DATABASE_URL')#, default='postgres:///gymnasium_db')
     #{
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
