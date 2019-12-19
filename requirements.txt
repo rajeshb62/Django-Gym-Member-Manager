@@ -5,6 +5,6 @@ python-datauri==0.2.6
 python-dateutil==2.7.0
 pytz==2018.3
 six==1.11.0
-environ
+django-environ==0.4.5
 psycopg2
 gunicorn
