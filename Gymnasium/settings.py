@@ -26,7 +26,7 @@ env= environ.Env()
 SECRET_KEY = 'k6_^w5l$q(85$r_vc*ou9q!aa8hh_aczk425&iw6w4qx$=cg=l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'Gymnasium.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-        'default': env.db('DATABASE_URL')#, default='postgres:///gymnasium_db')
+        'default': env.db('DATABASE_URL', default='postgres:///gymnasium_db')
     #{
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
