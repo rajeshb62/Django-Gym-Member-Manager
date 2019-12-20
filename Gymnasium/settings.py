@@ -28,7 +28,8 @@ SECRET_KEY = 'k6_^w5l$q(85$r_vc*ou9q!aa8hh_aczk425&iw6w4qx$=cg=l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS',                                default=[env('RENDER_EXTERNAL_HOSTNAME', default='')])
 
 # After succesful login go to path:
 LOGIN_REDIRECT_URL = '/'
@@ -142,6 +143,12 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+STATICFILES_FINDERS = [
+     'django.contrib.staticfiles.finders.FileSystemFinder',
+     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+ ]
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
