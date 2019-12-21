@@ -25,7 +25,7 @@ urlpatterns = [
     path('notifications/', include('notifications.urls')),
     path('reports/', include('reports.urls')),
     path('', include('accounts.urls'))
-]
+]+ static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
 
 # for handling profile photos
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
